@@ -44,18 +44,18 @@ def mostrar_personajes_rm():
     ventana_personajes = tk.Toplevel(root)
     ventana_personajes.title("Persoanjes de Rick and Morty")
     
-    tree = ttk.Treeview(ventana_personajes, columns=('ID', 'Nombre', 'Estado', 'Especie', 'Género'), show='headings')
-    tree.heading('ID', text='ID')
-    tree.heading('Nombre', text='Nombre')
-    tree.heading('Estado', text='Estado')
-    tree.heading('Especie', text='Especie')
-    tree.heading('Género', text='Género')
+    tabla_rm = ttk.Treeview(ventana_personajes, columns=('ID', 'Nombre', 'Estado', 'Especie', 'Género'), show='headings')
+    tabla_rm.heading('ID', text='ID')
+    tabla_rm.heading('Nombre', text='Nombre')
+    tabla_rm.heading('Estado', text='Estado')
+    tabla_rm.heading('Especie', text='Especie')
+    tabla_rm.heading('Género', text='Género')
 
     # Añadir filas
     for pers in personajes_rm:
-        tree.insert('', tk.END, values=(pers['id'], pers['name'], pers['status'], pers['species'], pers['gender']))
+        tabla_rm.insert('', tk.END, values=(pers['id'], pers['name'], pers['status'], pers['species'], pers['gender']))
 
-    tree.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+    tabla_rm.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
 # Verificar login en aplicación
 def login():
